@@ -1,5 +1,12 @@
 package com.gaiziweb.tlds;
 
+import java.io.File;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxBinary;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -32,7 +39,12 @@ public class AppTest
      * Rigourous Test :-)
      */
     public void testApp()
+    
     {
+    	File  browserAppPath = new File("/usr/bin/firefox-esr");
+
+    	WebDriver driver = new FirefoxDriver( new FirefoxBinary(browserAppPath), new FirefoxProfile());
+
         assertTrue( true );
     }
 }

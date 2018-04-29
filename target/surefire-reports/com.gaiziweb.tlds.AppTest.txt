@@ -1,4 +1,11 @@
 -------------------------------------------------------------------------------
 Test set: com.gaiziweb.tlds.AppTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.038 sec <<< FAILURE!
+testApp(com.gaiziweb.tlds.AppTest)  Time elapsed: 0.034 sec  <<< ERROR!
+java.lang.IllegalStateException: Specified firefox binary location does not exist or is not a real file: /usr/bin/firefox/firefox-bin
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:444)
+	at org.openqa.selenium.firefox.internal.Executable.<init>(Executable.java:46)
+	at org.openqa.selenium.firefox.FirefoxBinary.<init>(FirefoxBinary.java:138)
+	at com.gaiziweb.tlds.AppTest.testApp(AppTest.java:46)
+

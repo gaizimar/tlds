@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="com.gaiziweb.tlds.AppTest" time="0.002" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="com.gaiziweb.tlds.AppTest" time="0.034" errors="1" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/jre/lib"/>
@@ -26,7 +26,7 @@
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Users/omargaizi/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf4291646813619813243.tmp"/>
+    <property name="classworlds.conf" value="/Users/omargaizi/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf1240743514484049320.tmp"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/omargaizi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -63,5 +63,12 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.gaiziweb.tlds.AppTest" name="testApp" time="0.002"/>
+  <testcase classname="com.gaiziweb.tlds.AppTest" name="testApp" time="0.034">
+    <error message="Specified firefox binary location does not exist or is not a real file: /usr/bin/firefox/firefox-bin" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Specified firefox binary location does not exist or is not a real file: /usr/bin/firefox/firefox-bin
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:444)
+	at org.openqa.selenium.firefox.internal.Executable.&lt;init&gt;(Executable.java:46)
+	at org.openqa.selenium.firefox.FirefoxBinary.&lt;init&gt;(FirefoxBinary.java:138)
+	at com.gaiziweb.tlds.AppTest.testApp(AppTest.java:46)
+</error>
+  </testcase>
 </testsuite>
