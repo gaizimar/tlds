@@ -1,13 +1,11 @@
 package com.gaiziweb.tlds;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Platform;
+import java.io.File;
+
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.firefox.FirefoxBinary;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
@@ -19,10 +17,6 @@ import junit.framework.TestSuite;
 public class AppTest 
     extends TestCase
 {
-	  //public static RemoteWebDriver driver;
-	  public static WebDriver driver;
-
-	
     /**
      * Create the test case
      *
@@ -47,27 +41,11 @@ public class AppTest
     public void testApp()
     
     {
-        DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-        System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
-        capabilities.setCapability("marionette", false);
-        capabilities.setPlatform(Platform.LINUX);
-        capabilities.setBrowserName("firefox");
-        try {
-          driver = new RemoteWebDriver(capabilities);
-          driver.get("https://www.google.com");
-          driver.findElement(By.id("lst-ib")).sendKeys("Selenium Pi");
-          driver.findElement(By.name("btnG")).click();
-          Thread.sleep(5000);
-          WebElement resultsec = (new WebDriverWait(driver, 15))
-                .until(ExpectedConditions.presenceOfElementLocated(By.id("resultStats")));
-          String resultStats = resultsec.getText();
-          System.out.println("Browser title: " + driver.getTitle());
-          System.out.println("Google result stats: " + resultStats);
-        } catch (Exception e) {
-          System.out.println(e.getMessage());
-        } finally {
-          driver.quit();
-        }
+    	File  browserAppPath = new File("/usr/lib/firefox-esr/firefox-esr");
+
+    	WebDriver driver = new FirefoxDriver( new FirefoxBinary(browserAppPath), new FirefoxProfile());
+    	
+    	driver.get("https://www.gaiziweb.com");
 
         assertTrue( true );
     }
