@@ -1,16 +1,7 @@
 package com.gaiziweb.tlds;
 
-import java.io.File;
-
-import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.firefox.FirefoxProfile;
-
-import com.sun.jna.platform.unix.X11.Display;
-
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -48,7 +39,7 @@ public class AppTest
     	String geckoDriverPath = "/usr/local/bin/geckodriver";
 
     	System.setProperty("webdriver.gecko.driver", geckoDriverPath);
-
+    	
     	WebDriver driver = new FirefoxDriver();
     	
     	driver.get("https://www.google.com");
