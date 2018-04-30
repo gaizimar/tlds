@@ -31,12 +31,12 @@ public class AppTest
     }
 
     /**
-     * Rigourous Test :-)
+     * Rigourous Test :-))
      */
     public void testApp()
     
     {
-    	String geckoDriverPath = "/usr/local/bin/geckodriver";
+    	String geckoDriverPath = "\\usr\\local\\bin\\geckodriver";
 
     	System.setProperty("webdriver.gecko.driver", geckoDriverPath);
     	
