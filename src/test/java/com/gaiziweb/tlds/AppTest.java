@@ -31,17 +31,17 @@ public class AppTest
     }
 
     /**
-     * Rigourous Test :-))
+     * Rigourous Test :-)
      */
     public void testApp()
     
     {
-    	String geckoDriverPath = "\\usr\\local\\bin\\geckodriver";
+    	String geckoDriverPath = "/usr/local/bin/geckodriver";
 
-    	System.setProperty("webdriver.gecko.driver", geckoDriverPath);
     	
     	WebDriver driver = new FirefoxDriver();
-    	
+    	//System.setProperty("webdriver.gecko.driver", geckoDriverPath);
+
     	driver.get("https://www.google.com");
 
         assertTrue( true );
