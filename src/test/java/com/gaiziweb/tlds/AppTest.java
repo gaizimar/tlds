@@ -9,6 +9,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 
+import com.sun.jna.platform.unix.X11.Display;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -43,13 +45,13 @@ public class AppTest
     public void testApp()
     
     {
-    	File  browserAppPath = new File("/usr/bin/firefox-esr");
+    	String geckoDriverPath = "/usr/local/bin/geckodriver";
 
-    	WebDriver driver = new FirefoxDriver( new FirefoxBinary(browserAppPath), new FirefoxProfile());
-    	System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
+    	System.setProperty("webdriver.gecko.driver", geckoDriverPath);
 
+    	WebDriver driver = new FirefoxDriver();
     	
-    	driver.get("https://www.gaiziweb.com");
+    	driver.get("https://www.google.com");
 
         assertTrue( true );
     }
