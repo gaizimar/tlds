@@ -2,9 +2,11 @@ package com.gaiziweb.tlds;
 
 import java.io.File;
 
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 
 import junit.framework.Test;
@@ -41,9 +43,11 @@ public class AppTest
     public void testApp()
     
     {
-    	File  browserAppPath = new File("/usr/lib/firefox-esr/firefox-esr");
+    	File  browserAppPath = new File("/usr/bin/firefox-esr");
 
     	WebDriver driver = new FirefoxDriver( new FirefoxBinary(browserAppPath), new FirefoxProfile());
+    	System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
+
     	
     	driver.get("https://www.gaiziweb.com");
 
