@@ -3,9 +3,9 @@ package com.gaiziweb.tlds;
 import java.io.File;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
@@ -51,15 +51,10 @@ public class AppTest
         //chromeOptions.addArguments("--headless");
         desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
         
-    	//WebDriver driver = new ChromeDriver(desiredCapabilities);
+    	WebDriver driver = new ChromeDriver(desiredCapabilities);
     	
-        WebDriver driver = new RemoteWebDriver(DesiredCapabilities.chrome());
     	driver.get("https://www.google.com");
 
         assertTrue( true );
     }
 }
-
-
-
-
