@@ -40,7 +40,7 @@ public class AppTest
     
     {
     	//String geckoDriverPath = "/usr/local/bin/geckodriver";
-        File chromeDriver = new File("/usr/bin/chromium-browser");
+        File chromeDriver = new File("/usr/share/applications/chromium-browser");
         System.setProperty("webdriver.chrome.driver", chromeDriver.getAbsolutePath());
     	WebDriver driver = new ChromeDriver();
     	
