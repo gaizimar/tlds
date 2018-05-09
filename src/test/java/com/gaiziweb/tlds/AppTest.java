@@ -4,6 +4,8 @@ import java.io.File;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
@@ -40,9 +42,16 @@ public class AppTest
     
     {
     	//String geckoDriverPath = "/usr/local/bin/geckodriver";
+    	DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         File chromeDriver = new File("/usr/bin/chromium-browser");
         System.setProperty("webdriver.chrome.driver", chromeDriver.getAbsolutePath());
-    	WebDriver driver = new ChromeDriver();
+        
+        final ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setBinary("/usr/bin/chromium-browser");
+        chromeOptions.addArguments("--headless");
+        desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+        
+    	WebDriver driver = new ChromeDriver(desiredCapabilities);
     	
     	driver.get("https://www.google.com");
 
