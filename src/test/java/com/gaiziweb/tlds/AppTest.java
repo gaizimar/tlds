@@ -1,7 +1,10 @@
 package com.gaiziweb.tlds;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -37,9 +40,14 @@ public class AppTest
     
     {
     	//String geckoDriverPath = "/usr/local/bin/geckodriver";
-
-    	WebDriver driver = new FirefoxDriver();
-
+    	//WebDriver driver = new FirefoxDriver();
+    	final DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+    	final ChromeOptions chromeOptions = new ChromeOptions();
+    	chromeOptions.setBinary("/usr/bin/chromium-browser");
+    	chromeOptions.addArguments("--headless");
+    	desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+    	WebDriver driver = new RemoteWebDriver(desiredCapabilities);
+    	
     	driver.navigate().to("https://www.google.com");
 
         assertTrue( true );
