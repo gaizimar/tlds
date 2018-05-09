@@ -1,10 +1,9 @@
 package com.gaiziweb.tlds;
 
+import java.io.File;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
@@ -41,10 +40,8 @@ public class AppTest
     
     {
     	//String geckoDriverPath = "/usr/local/bin/geckodriver";
-    	
-    	DesiredCapabilities capabilities = new DesiredCapabilities();
-    	
-    	capabilities.setCapability(ChromeDriver, "");
+        File chromeDriver = new File("/usr/bin/chromium-browser");
+        System.setProperty("webdriver.chrome.driver", chromeDriver.getAbsolutePath());
     	WebDriver driver = new ChromeDriver();
     	
     	driver.get("https://www.google.com");
