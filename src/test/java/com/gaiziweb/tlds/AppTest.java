@@ -44,11 +44,11 @@ public class AppTest
     	//String geckoDriverPath = "/usr/local/bin/geckodriver";
     	DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         File chromeDriver = new File("/usr/bin/chromium-browser");
-        System.setProperty("webdriver.chrome.driver", chromeDriver.getAbsolutePath());
+        //System.setProperty("webdriver.chrome.driver", chromeDriver.getAbsolutePath());
         
         final ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.setBinary("/usr/bin/chromium-browser");
-        chromeOptions.addArguments("--headless");
+        //chromeOptions.addArguments("--headless");
         desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
         
     	WebDriver driver = new ChromeDriver(desiredCapabilities);
