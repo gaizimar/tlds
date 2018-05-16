@@ -49,5 +49,6 @@ public class AppTest
     	driver.get("https://www.google.com");
 
         assertTrue( true );
+        
     }
 }
