@@ -1,12 +1,7 @@
 package com.gaiziweb.tlds;
 
-import java.io.File;
-
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
@@ -48,6 +43,7 @@ public class AppTest
     	
     	driver.get("https://www.google.com");
 
+    	
         assertTrue( true );
         
     }
